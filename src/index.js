@@ -20,7 +20,19 @@
 
 // // letは再宣言不可！
 
-const val3 = "const変数"
-console.log(val3);
+// const val3 = "const変数"
+// console.log(val3);
 
-// constは上書き不可！
+// // constは上書き不可！
+
+
+const val4 = {
+    name: "masaya",
+    age: 19,
+};
+
+console.log(val4);
+
+val4.name = "聖弥";
+
+console.log(val4);
