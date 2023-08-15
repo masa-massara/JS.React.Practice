@@ -26,13 +26,26 @@
 // // constは上書き不可！
 
 
-const val4 = {
-    name: "masaya",
-    age: 19,
-};
+// const val4 = {
+//     name: "masaya",
+//     age: 19,
+// };
 
-console.log(val4);
+// console.log(val4);
 
-val4.name = "聖弥";
+// val4.name = "聖弥";
 
-console.log(val4);
+// console.log(val4);
+
+// //constで定義したオブジェクトはプロパティで上書き可能
+
+
+
+const val5 = ["dog","cat"];
+
+val5[0]= "bird"
+val5.push("monkey");
+console.log(val5);
+
+// //constで定義した配列はプロパティで上書き可能
+
