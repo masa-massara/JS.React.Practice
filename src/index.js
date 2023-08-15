@@ -49,16 +49,44 @@
 
 // // //constで定義した配列はプロパティで上書き可能
 
-//テンプレート文字列
-const name = "聖弥";
-const age = 19;
+// //テンプレート文字列
+// const name = "聖弥";
+// const age = 19;
 
-//私の名前は聖弥です。年齢は１９歳です。
+// //私の名前は聖弥です。年齢は１９歳です。
 
-//従来の方法
-const message1 = "私の名前は" + name + "です。年齢は" + age + "です。"
-console.log(message1);
+// //従来の方法
+// const message1 = "私の名前は" + name + "です。年齢は" + age + "です。"
+// console.log(message1);
 
-//テンプレート文字列を用いた方法
-const message2 = `私の名前は${name}です。年齢は${age}です。`
-console.log(message2);
+// //テンプレート文字列を用いた方法
+// const message2 = `私の名前は${name}です。年齢は${age}です。`
+// console.log(message2);
+
+
+//アロー関数
+
+//従来の関数
+function func1 (str){
+    return str;
+}
+console.log(func1("func1です"));
+
+
+//アロー関数を用いた方法
+
+const func2 = (str) => {return str;}
+console.log(func2("func2です"));
+
+//省略ver(引数が１つなら()を省略可能)
+const func3 = str => {return str;}
+console.log(func3("func3です"))
+
+
+//もっと省略ver(処理が１行なら{}を省略可能)
+const func4 = str => str;
+console.log(func4("func4です"));
+
+
+const func5 = (name1,name2) => {return name1+name2;}
+console.log(func5("聖弥","由川"))
