@@ -97,8 +97,15 @@
 // const message2 = `名前は${myProfile.name}です。年齢は${myProfile.age}`;
 // console.log(message2);
 
-const myProfile = ["聖弥", 19];
+// const myProfile = ["聖弥", 19];
 
-const [name, age] = myProfile;
-const message2 = `私は${name}です。${age}歳です。`;
-console.log(message2);
+// const [name, age] = myProfile;
+// const message2 = `私は${name}です。${age}歳です。`;
+// console.log(message2);
+
+/**
+ * デフォルト値
+ *  */ 
+
+const sayHello = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`)
+sayHello("聖弥");
