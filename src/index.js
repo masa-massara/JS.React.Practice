@@ -11,7 +11,6 @@
 // var val1 = "val変数を再宣言";
 // console.log(val1);
 
-
 // let val2 = "let変数";
 // console.log(val2);
 
@@ -25,7 +24,6 @@
 
 // // constは上書き不可！
 
-
 // const val4 = {
 //     name: "masaya",
 //     age: 19,
@@ -38,8 +36,6 @@
 // console.log(val4);
 
 // //constで定義したオブジェクトはプロパティで上書き可能
-
-
 
 // const val5 = ["dog","cat"];
 
@@ -63,7 +59,6 @@
 // const message2 = `私の名前は${name}です。年齢は${age}です。`
 // console.log(message2);
 
-
 //アロー関数
 
 // //従来の関数
@@ -71,7 +66,6 @@
 //     return str;
 // }
 // console.log(func1("func1です"));
-
 
 // //アロー関数を用いた方法
 
@@ -82,20 +76,19 @@
 // const func3 = str => {return str;}
 // console.log(func3("func3です"))
 
-
 // //もっと省略ver(処理が１行なら{}を省略可能)
 // const func4 = str => str;
 // console.log(func4("func4です"));
 
-
 // const func5 = (name1,name2) => {return name1+name2;}
 // console.log(func5("聖弥","由川"))
 
-
 //分割代入
 
-const mypProfile = {
-    name: "聖弥",
-    age: 28,
+const myProfile = {
+  name: "聖弥",
+  age: 28,
 };
 
+const message1 = `名前は${myProfile.name}です。年齢は${myProfile.age}`;
+console.log(message1);
