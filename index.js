@@ -105,7 +105,7 @@
 
 /**
  * デフォルト値
- *  */ 
+ *  */
 
 // const sayHello = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`)
 // sayHello("聖弥");
@@ -114,12 +114,20 @@
  * スプレッド構文
  */
 
-const arr1 = [1,2];
-console.log(arr1);
-console.log(...arr1);
+// const arr1 = [1,2];
+// console.log(arr1);
+// console.log(...arr1);
 
-const sumFunc = (num1,num2) => console.log(num1 + num2);
-sumFunc(arr1[0],arr1[1]);
-sumFunc(...arr1);
+// const sumFunc = (num1,num2) => console.log(num1 + num2);
+// sumFunc(arr1[0],arr1[1]);
+// sumFunc(...arr1);
 
+//配列のコピー
+const arr4 = [1, 2, 3];
+const arr5 = [30,40];
+const arr6 = [...arr4];
 
+console.log(arr6);
+
+const arr7 = [...arr4,...arr5,...arr6];
+console.log(arr7);
