@@ -123,11 +123,21 @@
 // sumFunc(...arr1);
 
 //配列のコピー
-const arr4 = [1, 2, 3];
-const arr5 = [30,40];
-const arr6 = [...arr4];
+// const arr4 = [1, 2, 3];
+// const arr5 = [30,40];
+// const arr6 = [...arr4];
 
-console.log(arr6);
+// console.log(arr6);
 
-const arr7 = [...arr4,...arr5,...arr6];
-console.log(arr7);
+// const arr7 = [...arr4,...arr5,...arr6];
+// console.log(arr7);
+
+//mapやフィルターを使った配列の処理
+const nameArr = ["田中", "山田", "由川"];
+for (let index = 0; index < nameArr.length; index++) {
+  console.log(nameArr[index]);
+}
+
+const nameArr2 = nameArr.map((name) => {
+  return name;
+});
