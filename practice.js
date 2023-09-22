@@ -42,15 +42,44 @@ const nameArr = ["田中", "山田", "由川"];
 // });
 
 //由川だけ呼び捨て、他はさん付けのする処理
-const newNameArr = nameArr.map((name) => {
-  if (name === "由川") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
+// const newNameArr = nameArr.map((name) => {
+//   if (name === "由川") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
   
-});
-console.log(newNameArr);
+// });
+// console.log(newNameArr);
 
-newNameArr.map((name2)=>console.log(name2));
+// newNameArr.map((name2)=>console.log(name2));
+
+
+// 三項演算子
+// const vall = 1 > 0? 'trueです':'falseです';
+// console.log(vall);
+
+// const num =1300;
+
+
+// const formattedNum =  typeof num === 'number' ? num.toLocaleString() :"数値を入力してください"
+// console.log(formattedNum);
+
+// const checkSum = (num1,num2) => {
+//   return num1 + num2 >100 ? '100を超えています':'許容範囲内です';
+// }
+// // console.log(checkSum(50,60));
+
+
+
+//三項演算子について
+// const flag1 = true;
+// const flag2 = false;
+
+// if(flag1||flag2){
+//   console.log("どちらかはtrueです");
+// }
+// if (flag1&&flag2) {
+//   console.log("どちらもtrueです")
+// }
 
