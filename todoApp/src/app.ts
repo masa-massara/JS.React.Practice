@@ -1,8 +1,14 @@
-const doUl = document.getElementById("doUl");
-const element: HTMLInputElement =<HTMLInputElement>document.getElementById('addText');
-const value: string = element.value;
+const onClickAdd = () => {
+  // テキストの取得と入力欄の初期化
+  const element: HTMLInputElement = <HTMLInputElement>(
+    document.getElementById("add-text")
+  );
+  const value: string = element.value;
+  element.value = "";
 
-const clickInput = () => {
-  const inputText = value;
-  console.log(inputText);
+  
 };
+
+document
+  .getElementById("inputButton")!
+  .addEventListener("click", () => onClickAdd());

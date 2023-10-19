@@ -1,8 +1,11 @@
 "use strict";
-const doUl = document.getElementById("doUl");
-const element = document.getElementById('addText');
-const value = element.value;
-const clickInput = () => {
-    const inputText = value;
-    console.log(inputText);
+const onClickAdd = () => {
+    // テキストの取得と入力欄の初期化
+    const element = (document.getElementById("add-text"));
+    const value = element.value;
+    element.value = "";
+    console.log("hello");
 };
+document
+    .getElementById("inputButton")
+    .addEventListener("click", () => onClickAdd());
