@@ -13,6 +13,7 @@ const onClickAdd = () => {
 // div,liタグでtodoのDOMを作成
 // 引数はelement(追加するtodoの名前)
 const domOperation = (element) => {
+    const ul = document.getElementById("doUl");
     //divタグ作成
     const div = document.createElement("div");
     div.className = "todo";
@@ -24,7 +25,26 @@ const domOperation = (element) => {
     const completeButton = document.createElement("button");
     completeButton.innerText = "完了";
     completeButton.addEventListener("click", () => {
-        console.log("完了にクリック");
+        const deleteTarget = deleteButton.parentNode;
+        const childElement = deleteTarget;
+        console.log(deleteTarget);
+        const todoParent = document.getElementById("doUl");
+        deleteTarget === null || deleteTarget === void 0 ? void 0 : deleteTarget.parentNode.removeChild(deleteTarget);
+        // liの中身を取得
+        // 完了したtodoを表示
+        //divタグ作成
+        const doneDiv = document.createElement("div");
+        doneDiv.className = "todone";
+        console.log(element.value);
+        // liタグ作成
+        const doneList = document.createElement("li");
+        doList.innerHTML = `${childElement === null || childElement === void 0 ? void 0 : childElement.children[0]}`;
+        doList.classList.add("doneLi");
+        // / doneDivの中にdoneListを入れる
+        doneDiv.appendChild(doneList);
+        const doneUl = (document.getElementById("doneUl"));
+        //作ったdivタブのDOMを反映(追加)
+        doneUl.appendChild(doneDiv);
     });
     // 削除ボタン作成
     const deleteButton = document.createElement("button");
