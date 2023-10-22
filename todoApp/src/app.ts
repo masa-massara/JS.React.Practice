@@ -17,6 +17,7 @@ const onClickAdd = () => {
 // div,liタグでtodoのDOMを作成
 // 引数はelement(追加するtodoの名前)
 const domOperation = (element: HTMLInputElement): void => {
+  const ul = document.getElementById("doUl");
   //divタグ作成
   const div = document.createElement("div");
   div.className = "todo";
@@ -30,7 +31,34 @@ const domOperation = (element: HTMLInputElement): void => {
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
-    console.log("完了にクリック");
+    const deleteTarget = deleteButton.parentNode;
+    const childElement = deleteTarget;
+    console.log(deleteTarget);
+    const todoParent = document.getElementById("doUl");
+    deleteTarget?.parentNode!.removeChild(deleteTarget);
+
+    // liの中身を取得
+    
+
+    // 完了したtodoを表示
+    //divタグ作成
+    const doneDiv = document.createElement("div");
+    doneDiv.className = "todone";
+
+    console.log(element.value);
+    // liタグ作成
+    const doneList = document.createElement("li");
+    doList.innerHTML = `${childElement?.children[0]}`;
+    doList.classList.add("doneLi");
+
+    // / doneDivの中にdoneListを入れる
+    doneDiv.appendChild(doneList);
+
+    const doneUl: HTMLInputElement = <HTMLInputElement>(
+      document.getElementById("doneUl")
+    );
+    //作ったdivタブのDOMを反映(追加)
+    doneUl.appendChild(doneDiv);
   });
 
   // 削除ボタン作成
@@ -47,7 +75,6 @@ const domOperation = (element: HTMLInputElement): void => {
     // todo!.removeChild(deleteTarget!);
   });
 
- 
   //divの中にliを入れる
   div.appendChild(doList);
   div.appendChild(completeButton);

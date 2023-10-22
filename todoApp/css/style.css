@@ -10,6 +10,7 @@ button {
   padding: 4px 10px;
   border: none;
 }
+
 button:hover {
   background-color: #ff7fff;
   color: #fff;
@@ -54,13 +55,23 @@ li {
   border-radius: 15px;
 }
 
-ul > li {
+li {
   list-style-type: square;
 }
 
-.todo {
+li ::marker {
+  list-style: disc;
+}
+
+.ul {
+  list-style: disc;
+}
+
+div.todo,
+div.todone {
   display: flex;
   align-items: center;
   padding-bottom: 4px;
+  list-style: disc;
   /* justify-content: space-between; */
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
