@@ -14,6 +14,11 @@ const onClickAdd = () => {
   element.value = "";
 };
 
+
+// 完了ボタンを追加する関数
+
+
+
 // div,liタグでtodoのDOMを作成
 // 引数はelement(追加するtodoの名前)
 const domOperation = (element: HTMLInputElement): void => {
@@ -32,13 +37,12 @@ const domOperation = (element: HTMLInputElement): void => {
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
     const deleteTarget = deleteButton.parentNode;
-    const childElement = deleteTarget;
-    console.log(deleteTarget);
-    const todoParent = document.getElementById("doUl");
+
     deleteTarget?.parentNode!.removeChild(deleteTarget);
 
     // liの中身を取得
-    
+    const addTarget: HTMLDivElement = <HTMLDivElement>completeButton.parentNode;
+    const addText = addTarget.firstElementChild?.innerHTML;
 
     // 完了したtodoを表示
     //divタグ作成
@@ -48,8 +52,8 @@ const domOperation = (element: HTMLInputElement): void => {
     console.log(element.value);
     // liタグ作成
     const doneList = document.createElement("li");
-    doList.innerHTML = `${childElement?.children[0]}`;
-    doList.classList.add("doneLi");
+    doneList.innerHTML = `${addText}`;
+    doneList.classList.add("doneLi");
 
     // / doneDivの中にdoneListを入れる
     doneDiv.appendChild(doneList);
@@ -57,6 +61,26 @@ const domOperation = (element: HTMLInputElement): void => {
     const doneUl: HTMLInputElement = <HTMLInputElement>(
       document.getElementById("doneUl")
     );
+
+    // 戻すボタン作成
+    const returnButton = document.createElement("button");
+    returnButton.innerText = "戻す";
+    returnButton.addEventListener("click", () => {
+      const returnTarget = returnButton.parentNode;
+
+      returnTarget?.parentNode!.removeChild(returnTarget);
+
+      // liの中身を取得
+      const restoreTarget: HTMLDivElement = <HTMLDivElement>(
+        returnButton.parentNode
+      );
+      const returnText = restoreTarget.firstElementChild?.innerHTML;
+      
+    });
+
+    // doneDivの中に戻すボタンを入れる
+    doneDiv.appendChild(returnButton);
+
     //作ったdivタブのDOMを反映(追加)
     doneUl.appendChild(doneDiv);
   });
@@ -69,10 +93,6 @@ const domOperation = (element: HTMLInputElement): void => {
 
     const todoParent = document.getElementById("doUl");
     deleteTarget?.parentNode!.removeChild(deleteTarget);
-
-    // targetParent!.removeChild(deleteTarget!);
-
-    // todo!.removeChild(deleteTarget!);
   });
 
   //divの中にliを入れる
