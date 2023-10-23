@@ -14,7 +14,7 @@ input {
   outline: none;
 }
 
-.title{
+.title {
   text-align: center;
   margin-top: 0;
   font-weight: bold;
@@ -50,12 +50,13 @@ button {
   border-radius: 8px;
 }
 
-.list-row{
+.incomplete-todo,
+.complete-todo {
   display: flex;
   align-items: center;
   padding-bottom: 4px;
 }
 
-li{
+li {
   margin-right: 8px;
 }

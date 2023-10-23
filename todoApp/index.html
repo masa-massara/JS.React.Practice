@@ -7,33 +7,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOdo app</title>
+    <title>g2254946-由川聖弥-todoリスト</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
     <div class="input-area">
-        <input placeholder="TODOを入力">
-        <button>追加</button>
+        <input id="add-text" placeholder="TODOを入力">
+        <button id="add-button">追加</button>
     </div>
     <div class="incomplete-area">
         <p class="title">未完了のTODO</p>
-        <ul>
-            <div class="list-row">
-                <li>TODOです</li>
-                <button>完了</button>
-                <button>削除</button>
-            </div>
+        <ul id="incomplete-todo">
+
         </ul>
     </div>
     <div class="complete-area">
         <p class="title">完了したTODO</p>
-        <ul>
-            <div class="list-row">
-                <li>TODOでした</li>
-                <button>戻す
-                </button>
-            </div>
+        <ul id="complete-todo">
+
         </ul>
     </div>
     <script src="lib/todo.js"></script>

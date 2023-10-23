@@ -50,7 +50,8 @@ button:hover {
   border-radius: 8px;
 }
 
-.list-row {
+.incomplete-todo,
+.complete-todo {
   display: flex;
   align-items: center;
   padding-bottom: 4px;
