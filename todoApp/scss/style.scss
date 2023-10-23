@@ -1,3 +1,12 @@
+.input-area {
+  background-color: #c1ffff;
+  width: 400px;
+  height: 30px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
 input {
   border-radius: 16px;
   border: none;
@@ -5,72 +14,48 @@ input {
   outline: none;
 }
 
-button {
-  border-radius: 10px;
-  padding: 4px 10px;
-  border: none;
-}
-button:hover {
-  background-color: #ff7fff;
-  color: #fff;
-  cursor: pointer;
-}
-
-li {
-  margin-right: 8px;
-}
-
-.title {
+.title{
   text-align: center;
   margin-top: 0;
   font-weight: bold;
   color: #666;
 }
 
-.inputContainer {
-  background-color: #c1ffff;
-  width: 300px;
-  height: 30px;
-  padding: 8px;
-  margin: 8px 0px;
-  border-radius: 15px;
+button {
+  border-radius: 16px;
+  padding: 4px 16px;
+  border: none;
+  &:hover {
+    background-color: #ff7fff;
+    color: #fff;
+    cursor: pointer;
+  }
 }
 
-.incompletedContainer {
+.incomplete-area {
   background-color: #c6ffe2;
-  width: 300px;
+  width: 400px;
   min-height: 200px;
   padding: 8px;
-  margin: 8px 0px;
-  border-radius: 15px;
+  margin: 8px;
+  border-radius: 8px;
 }
 
-.completedContainer {
+.complete-area {
   background-color: #ffffe0;
-  width: 300px;
+  width: 400px;
   min-height: 200px;
   padding: 8px;
-  margin: 8px 0px;
-  border-radius: 15px;
+  margin: 8px;
+  border-radius: 8px;
 }
 
-li {
-  list-style-type: square;
-}
-
-li ::marker {
-  list-style: disc;
-}
-
-.ul {
-  list-style: disc;
-}
-
-div.todo,
-div.todone {
+.list-row{
   display: flex;
   align-items: center;
   padding-bottom: 4px;
-  list-style: disc;
-  /* justify-content: space-between; */
-} /*# sourceMappingURL=style.css.map */
+}
+
+li{
+  margin-right: 8px;
+}

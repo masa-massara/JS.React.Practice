@@ -1,40 +1,42 @@
+<!-- id・class名は半角英数字のみのケバブケース -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo(JS)</title>
+    <title>TOdo app</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="inputContainer">
-        <input id="add-text" placeholder="TODOを入力" />
-        <button id="inputButton">追加</button>
+    <div class="input-area">
+        <input placeholder="TODOを入力">
+        <button>追加</button>
     </div>
-    <div class="incompletedContainer" id ="incompletedTodo">
+    <div class="incomplete-area">
         <p class="title">未完了のTODO</p>
-        <ul id="doUl" class="ul">
-            <div class="todo">
+        <ul>
+            <div class="list-row">
                 <li>TODOです</li>
                 <button>完了</button>
                 <button>削除</button>
             </div>
         </ul>
     </div>
-    <div class="completedContainer">
+    <div class="complete-area">
         <p class="title">完了したTODO</p>
-        <ul id="doneUl">
-            <div class="todone">
-                <li>完了済</li>
-                <button>戻す</button>
+        <ul>
+            <div class="list-row">
+                <li>TODOでした</li>
+                <button>戻す
+                </button>
             </div>
         </ul>
     </div>
-
-    <script src="lib/app.js">
-    </script>
+    <script src="lib/todo.js"></script>
 </body>
 
 </html>

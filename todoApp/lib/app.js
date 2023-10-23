@@ -10,6 +10,7 @@ const onClickAdd = () => {
     const value = element.value;
     element.value = "";
 };
+// 完了ボタンを追加する関数
 // div,liタグでtodoのDOMを作成
 // 引数はelement(追加するtodoの名前)
 const domOperation = (element) => {
@@ -25,12 +26,12 @@ const domOperation = (element) => {
     const completeButton = document.createElement("button");
     completeButton.innerText = "完了";
     completeButton.addEventListener("click", () => {
+        var _a;
         const deleteTarget = deleteButton.parentNode;
-        const childElement = deleteTarget;
-        console.log(deleteTarget);
-        const todoParent = document.getElementById("doUl");
         deleteTarget === null || deleteTarget === void 0 ? void 0 : deleteTarget.parentNode.removeChild(deleteTarget);
         // liの中身を取得
+        const addTarget = completeButton.parentNode;
+        const addText = (_a = addTarget.firstElementChild) === null || _a === void 0 ? void 0 : _a.innerHTML;
         // 完了したtodoを表示
         //divタグ作成
         const doneDiv = document.createElement("div");
@@ -38,11 +39,24 @@ const domOperation = (element) => {
         console.log(element.value);
         // liタグ作成
         const doneList = document.createElement("li");
-        doList.innerHTML = `${childElement === null || childElement === void 0 ? void 0 : childElement.children[0]}`;
-        doList.classList.add("doneLi");
+        doneList.innerHTML = `${addText}`;
+        doneList.classList.add("doneLi");
         // / doneDivの中にdoneListを入れる
         doneDiv.appendChild(doneList);
         const doneUl = (document.getElementById("doneUl"));
+        // 戻すボタン作成
+        const returnButton = document.createElement("button");
+        returnButton.innerText = "戻す";
+        returnButton.addEventListener("click", () => {
+            var _a;
+            const returnTarget = returnButton.parentNode;
+            returnTarget === null || returnTarget === void 0 ? void 0 : returnTarget.parentNode.removeChild(returnTarget);
+            // liの中身を取得
+            const restoreTarget = (returnButton.parentNode);
+            const returnText = (_a = restoreTarget.firstElementChild) === null || _a === void 0 ? void 0 : _a.innerHTML;
+        });
+        // doneDivの中に戻すボタンを入れる
+        doneDiv.appendChild(returnButton);
         //作ったdivタブのDOMを反映(追加)
         doneUl.appendChild(doneDiv);
     });
@@ -53,8 +67,6 @@ const domOperation = (element) => {
         const deleteTarget = deleteButton.parentNode;
         const todoParent = document.getElementById("doUl");
         deleteTarget === null || deleteTarget === void 0 ? void 0 : deleteTarget.parentNode.removeChild(deleteTarget);
-        // targetParent!.removeChild(deleteTarget!);
-        // todo!.removeChild(deleteTarget!);
     });
     //divの中にliを入れる
     div.appendChild(doList);
