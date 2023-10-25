@@ -2,7 +2,9 @@
 // 変数名	ローワーキャメルケース
 // メソッド名	ローワーキャメルケース
 // 追加ボタンが押された際の動作
-function ifClickAddButton() {
+unction;
+ifClickAddButton();
+{
     const temporaryInputText = (document.getElementById("add-text"));
     const inputText = temporaryInputText.value;
     // 空欄の時は追加しない
@@ -12,6 +14,25 @@ function ifClickAddButton() {
     // テキスト欄の初期化
     const value = inputText;
     temporaryInputText.value = "";
+}
+// 完了ボタンが押された際の動作
+function ifClickCompleteButton(completeButton) {
+    const completeTarget = completeButton.parentNode;
+    completeTarget === null || completeTarget === void 0 ? void 0 : completeTarget.parentNode.removeChild(completeTarget);
+    const taskName = extractTaskName(completeButton);
+    addCompleteTodo(taskName);
+}
+// 削除ボタンが押された際の動作
+function ifClickDeleteButton(deleteButton) {
+    const deleteTarget = deleteButton.parentNode;
+    deleteTarget === null || deleteTarget === void 0 ? void 0 : deleteTarget.parentNode.removeChild(deleteTarget);
+}
+// 戻すボタンが押された際の動作
+function ifClickReturnButton(returnButton) {
+    const returnTarget = returnButton.parentNode;
+    returnTarget === null || returnTarget === void 0 ? void 0 : returnTarget.parentNode.removeChild(returnTarget);
+    const taskName = extractTaskName(returnButton);
+    addIncompleteTodo(taskName);
 }
 // 未完了のTodoを追加する関数
 function addIncompleteTodo(inputText) {
@@ -52,13 +73,6 @@ function createCompleteButton(incompleteDiv) {
     incompleteDiv.appendChild(completeButton);
     completeButton.addEventListener("click", () => ifClickCompleteButton(completeButton));
 }
-// 完了ボタンが押された際の動作
-function ifClickCompleteButton(completeButton) {
-    const completeTarget = completeButton.parentNode;
-    completeTarget === null || completeTarget === void 0 ? void 0 : completeTarget.parentNode.removeChild(completeTarget);
-    const taskName = extractTaskName(completeButton);
-    addCompleteTodo(taskName);
-}
 // 削除ボタンを作成する関数
 function createDeleteButton(incompleteDiv) {
     const deleteButton = document.createElement("button");
@@ -66,24 +80,12 @@ function createDeleteButton(incompleteDiv) {
     incompleteDiv.appendChild(deleteButton);
     deleteButton.addEventListener("click", () => ifClickDeleteButton(deleteButton));
 }
-// 削除ボタンが押された際の動作
-function ifClickDeleteButton(deleteButton) {
-    const deleteTarget = deleteButton.parentNode;
-    deleteTarget === null || deleteTarget === void 0 ? void 0 : deleteTarget.parentNode.removeChild(deleteTarget);
-}
 // 戻すボタンを作成する関数
 function createReturnButton(completeDiv) {
     const returnButton = document.createElement("button");
     returnButton.innerText = "戻す";
     completeDiv.appendChild(returnButton);
     returnButton.addEventListener("click", () => ifClickReturnButton(returnButton));
-}
-// 戻すボタンが押された際の動作
-function ifClickReturnButton(returnButton) {
-    const returnTarget = returnButton.parentNode;
-    returnTarget === null || returnTarget === void 0 ? void 0 : returnTarget.parentNode.removeChild(returnTarget);
-    const taskName = extractTaskName(returnButton);
-    addIncompleteTodo(taskName);
 }
 // html要素の中からtodoの名前だけを取り出す関数
 function extractTaskName(targetButton) {
